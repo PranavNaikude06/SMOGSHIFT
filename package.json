@@ -1,0 +1,17 @@
+{
+  "name": "smogshift",
+  "version": "0.1.0",
+  "description": "GenAI urban air quality assistant: reschedules your day into clean-air hours and explains impact in cigarettes and CO2.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch --env-file-if-exists=.env server.js",
+    "test": "node --test",
+    "coverage": "node --test --experimental-test-coverage"
+  }
+}
