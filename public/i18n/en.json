@@ -1,0 +1,193 @@
+{
+  "app": {
+    "name": "SmogShift",
+    "tagline": "Smog-smart days for your family, with the impact counted in cigarettes and CO₂.",
+    "skip": "Skip to content",
+    "language": "Language",
+    "footer": "Air data: Open-Meteo (CAMS forecast). Summaries: Groq AI, written only from the numbers shown. 1 cigarette ≈ breathing 22 µg/m³ of PM2.5 for a day (Berkeley Earth). Not medical advice."
+  },
+  "form": {
+    "heading": "Plan a smog-smart day",
+    "intro": "Tell us a little about your household. Nothing is stored.",
+    "city": "City",
+    "cityHint": "English spelling works best, e.g. Pune, Delhi, Mumbai.",
+    "groups": "Who lives with you?",
+    "groupsHint": "Tick everyone who is more sensitive to polluted air.",
+    "commuteMode": "How do you usually commute?",
+    "commuteKm": "One-way commute distance (km)",
+    "heating": "How do you heat your home or water?",
+    "hasPurifier": "We have an air purifier",
+    "exercisesOutdoors": "Someone exercises outdoors (walk, run, cycle)",
+    "submit": "Make my plan",
+    "loading": "Checking the air…"
+  },
+  "groups": {
+    "children": "Children",
+    "elderly": "Elderly people",
+    "respiratory": "Asthma or lung condition",
+    "heart": "Heart condition",
+    "pregnant": "Pregnant person"
+  },
+  "commuteModes": {
+    "car": "car",
+    "motorbike": "motorbike / scooter",
+    "bus": "bus",
+    "metro": "metro / train",
+    "cycle": "bicycle",
+    "walk": "walking",
+    "remote": "I work from home"
+  },
+  "heatingTypes": {
+    "none": "No heating",
+    "wood": "wood",
+    "coal": "coal",
+    "kerosene": "kerosene",
+    "gas": "gas (LPG / PNG)",
+    "electric": "electric heater",
+    "heatpump": "heat pump"
+  },
+  "category": {
+    "good": "Good",
+    "moderate": "Moderate",
+    "usg": "Unhealthy for sensitive groups",
+    "unhealthy": "Unhealthy",
+    "very_unhealthy": "Very unhealthy",
+    "hazardous": "Hazardous"
+  },
+  "area": {
+    "routine": "Low-emission routine",
+    "indoor": "Indoor air hack",
+    "alternative": "Sustainable alternative"
+  },
+  "results": {
+    "heading": "Today in {city}",
+    "aqiUnit": "US AQI",
+    "pm25": "PM2.5 {pm25} µg/m³ · reading at {time}",
+    "summaryHeading": "Your day in brief",
+    "summaryAi": "Written by AI using only the numbers on this page.",
+    "summaryAuto": "Automatic summary (AI unavailable right now).",
+    "summaryFallback": "Air in {city} is {category} right now (US AQI {aqi}, PM2.5 {pm25} µg/m³). Most important today: {top}.",
+    "actionsHeading": "What to do today, most important first",
+    "impactLabel": "Impact"
+  },
+  "impact": {
+    "cigarettes": "≈ {n} cigarettes of smoke avoided today",
+    "co2": "{n} kg CO₂ saved per week",
+    "streetCo2": "You + {neighbours} neighbours: {n} kg CO₂ saved per week",
+    "streetHouseholds": "You + {neighbours} neighbours: {n} fewer smoke sources on your street"
+  },
+  "actions": {
+    "exercise-indoors": {
+      "title": "Move today's workout indoors",
+      "detail": "The air is too polluted for exercise outside. You breathe 2–3× more air when active, so work out indoors with the windows closed."
+    },
+    "exercise-clean-hour": {
+      "title": "Exercise at {time}",
+      "detail": "If you exercise outside, go at {time}, when PM2.5 is forecast to drop to {pm25} µg/m³."
+    },
+    "protect-sensitive": {
+      "title": "Protect the most vulnerable at home",
+      "detail": "At home: {groups}. Keep their outdoor time short, keep reliever medicines handy, and see a doctor if breathing gets harder."
+    },
+    "wear-n95": {
+      "title": "Wear an N95 mask outdoors",
+      "detail": "A well-fitted N95 or FFP2 mask blocks most fine dust. Cloth and surgical masks stop far less."
+    },
+    "errands-clean-hour": {
+      "title": "Do errands around {time}",
+      "detail": "Shift market trips, walks and school pick-ups to around {time}, when PM2.5 is forecast at {pm25} µg/m³."
+    },
+    "short-trips": {
+      "title": "Keep outdoor trips short",
+      "detail": "No cleaner hour is forecast for the rest of today, so combine errands into one short trip and avoid busy roads."
+    },
+    "ventilate-now": {
+      "title": "Air out your home now",
+      "detail": "The air is clean right now. Open windows for 10–15 minutes to flush out cooking smoke and dust."
+    },
+    "close-windows": {
+      "title": "Keep windows closed during smog",
+      "detail": "Shut windows and doors during smoggy hours, and air the house out briefly at the cleanest hour of the day."
+    },
+    "run-purifier": {
+      "title": "Run your purifier overnight",
+      "detail": "Run it on high in the bedroom with the door closed while everyone sleeps."
+    },
+    "diy-purifier": {
+      "title": "Build a ₹1,500 DIY purifier",
+      "detail": "Tape a MERV-13 filter to a box fan (a Corsi–Rosenthal box) and run it in the bedroom at night with the door closed."
+    },
+    "avoid-indoor-smoke": {
+      "title": "Cut smoke inside your home",
+      "detail": "On smog days skip incense, candles and mosquito coils, use the exhaust fan when frying, and mop instead of sweeping."
+    },
+    "switch-commute": {
+      "title": "Take the {target} instead of the {mode}",
+      "detail": "Your {km} km {mode} commute adds exhaust to the same streets you breathe. The {target} is cleaner for everyone."
+    },
+    "switch-heating": {
+      "title": "Stop burning {fuel}",
+      "detail": "Burning {fuel} is one of the biggest winter smog sources. Switch to an electric heater or heat pump, and never burn rubbish."
+    },
+    "no-burning": {
+      "title": "Stop leaf and rubbish burning",
+      "detail": "Compost leaves instead of burning them, and ask your housing society to stop open burning or report it to the municipal body."
+    }
+  },
+  "schedule": {
+    "heading": "Reshuffle my day",
+    "intro": "Type your plans in your own words. AI reads them; our code moves flexible outdoor tasks to the cleanest hours of today's forecast.",
+    "label": "Your day",
+    "hint": "For example: 9am school drop 20 min, 11am market 1 hr, 6pm walk 45 min.",
+    "counter": "{n} of 500 characters",
+    "submit": "Reshuffle my day",
+    "loading": "Reading your day…",
+    "resultsHeading": "Your smog-smart day in {city}",
+    "total": "Smoke breathed outdoors today: {before} → {after} cigarettes",
+    "moved": "Moved {from} → {to}",
+    "stays": "Stays at {time}",
+    "cigs": "≈ {before} → {after} cigarettes",
+    "n95": "The air is still unhealthy then, so wear an N95.",
+    "reason": {
+      "fixed": "fixed time",
+      "indoor": "indoors",
+      "past": "already done",
+      "noBetter": "already the cleanest option"
+    }
+  },
+  "audit": {
+    "heading": "Check a room for pollution sources",
+    "intro": "Take or choose a photo of your kitchen, bedroom or living room. AI looks for things that pollute the air indoors.",
+    "label": "Room photo",
+    "hint": "Your photo is shrunk and stripped of location data on this device before upload, and it is never stored.",
+    "submit": "Check this room",
+    "loading": "Looking at your photo…",
+    "resultsHeading": "What we spotted",
+    "none": "No obvious pollution sources spotted. Still: air out your home at the cleanest hour, and skip incense and candles on smog days.",
+    "previewAlt": "Preview of the photo you chose",
+    "why": "Why: {why}",
+    "severity": {
+      "low": "Low impact",
+      "medium": "Medium impact",
+      "high": "High impact"
+    }
+  },
+  "errors": {
+    "photoRequired": "Choose a photo first.",
+    "photoInvalid": "Please choose a JPEG, PNG or WebP photo.",
+    "photoTooBig": "That photo is too large. Please try a smaller one.",
+    "photoTooSmall": "That image is too small to check. Please use a normal photo.",
+    "cityFirst": "Enter your city in the form above first.",
+    "dayRequired": "Describe your day in at least a few words.",
+    "dayUnreadable": "We couldn't find times in that. Try e.g. \"9am market 1 hr, 6pm walk\".",
+    "aiUnavailable": "AI features aren't available right now.",
+    "aiBusy": "The AI is busy. Please try again in a moment.",
+    "cityRequired": "Please enter your city.",
+    "notFound": "We couldn't find that city. Try a nearby larger city in English spelling.",
+    "invalid": "Some answers look wrong. Please check the form and try again.",
+    "rateLimited": "Too many requests. Please wait a minute and try again.",
+    "upstream": "The air-quality service is busy. Please try again in a moment.",
+    "network": "You seem to be offline. Check your connection and try again.",
+    "generic": "Something went wrong. Please try again."
+  }
+}

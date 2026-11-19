@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmogShift: smog-smart days for your family</title>
+  <meta name="description" content="Live air quality turned into a ranked plan for your household, with the impact of every choice counted in cigarettes and CO₂.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="app.skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-row">
+      <p class="brand" data-i18n="app.name">SmogShift</p>
+      <div class="lang-picker">
+        <label for="language" data-i18n="app.language">Language</label>
+        <select id="language" name="language">
+          <option value="en" lang="en">English</option>
+          <option value="hi" lang="hi">हिन्दी</option>
+          <option value="mr" lang="mr">मराठी</option>
+        </select>
+      </div>
+    </div>
+    <p class="tagline" data-i18n="app.tagline">Smog-smart days for your family, with the impact counted in cigarettes and CO₂.</p>
+  </header>
+
+  <main id="main">
+    <section class="card" aria-labelledby="form-heading">
+      <h1 id="form-heading" data-i18n="form.heading">Plan a smog-smart day</h1>
+      <p class="muted" data-i18n="form.intro">Tell us a little about your household. Nothing is stored.</p>
+
+      <form id="plan-form" novalidate>
+        <div class="field">
+          <label for="city" data-i18n="form.city">City</label>
+          <input id="city" name="city" type="text" required minlength="2" maxlength="80"
+                 autocomplete="address-level2" aria-describedby="city-hint">
+          <p id="city-hint" class="hint" data-i18n="form.cityHint">English spelling works best, e.g. Pune, Delhi, Mumbai.</p>
+        </div>
+
+        <fieldset class="field">
+          <legend data-i18n="form.groups">Who lives with you?</legend>
+          <p id="groups-hint" class="hint" data-i18n="form.groupsHint">Tick everyone who is more sensitive to polluted air.</p>
+          <div class="checks" id="groups" data-options="groups"></div>
+        </fieldset>
+
+        <div class="row">
+          <div class="field">
+            <label for="commuteMode" data-i18n="form.commuteMode">How do you usually commute?</label>
+            <select id="commuteMode" name="commuteMode" data-options="commuteModes"></select>
+          </div>
+          <div class="field">
+            <label for="commuteKm" data-i18n="form.commuteKm">One-way commute distance (km)</label>
+            <input id="commuteKm" name="commuteKm" type="number" inputmode="decimal" min="0" max="200" step="0.5" value="10">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="heating" data-i18n="form.heating">How do you heat your home or water?</label>
+          <select id="heating" name="heating" data-options="heatingTypes"></select>
+        </div>
+
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="hasPurifier"> <span data-i18n="form.hasPurifier">We have an air purifier</span></label>
+          <label class="check"><input type="checkbox" name="exercisesOutdoors"> <span data-i18n="form.exercisesOutdoors">Someone exercises outdoors (walk, run, cycle)</span></label>
+        </div>
+
+        <button type="submit" id="submit" class="button" data-i18n="form.submit">Make my plan</button>
+        <p id="form-error" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="results" class="results" aria-live="polite" aria-busy="false" hidden></section>
+
+    <section class="card" aria-labelledby="schedule-heading">
+      <h2 id="schedule-heading" data-i18n="schedule.heading">Reshuffle my day</h2>
+      <p class="muted" data-i18n="schedule.intro">Type your plans in your own words. AI reads them; our code moves flexible outdoor tasks to the cleanest hours of today's forecast.</p>
+
+      <form id="schedule-form" novalidate>
+        <div class="field">
+          <label for="day-text" data-i18n="schedule.label">Your day</label>
+          <textarea id="day-text" name="text" rows="3" maxlength="500" required
+                    aria-describedby="day-hint day-counter"></textarea>
+          <p id="day-hint" class="hint" data-i18n="schedule.hint">For example: 9am school drop 20 min, 11am market 1 hr, 6pm walk 45 min.</p>
+          <p id="day-counter" class="hint"></p>
+        </div>
+        <button type="submit" id="schedule-submit" class="button" data-i18n="schedule.submit">Reshuffle my day</button>
+        <p id="schedule-error" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="schedule-results" class="results" aria-live="polite" aria-busy="false" hidden></section>
+
+    <section class="card" aria-labelledby="audit-heading">
+      <h2 id="audit-heading" data-i18n="audit.heading">Check a room for pollution sources</h2>
+      <p class="muted" data-i18n="audit.intro">Take or choose a photo of your kitchen, bedroom or living room. AI looks for things that pollute the air indoors.</p>
+
+      <form id="audit-form" novalidate>
+        <div class="field">
+          <label for="photo" data-i18n="audit.label">Room photo</label>
+          <input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="photo-hint">
+          <p id="photo-hint" class="hint" data-i18n="audit.hint">Your photo is shrunk and stripped of location data on this device before upload, and it is never stored.</p>
+        </div>
+        <img id="photo-preview" class="preview" alt="" hidden>
+        <button type="submit" id="audit-submit" class="button" data-i18n="audit.submit">Check this room</button>
+        <p id="audit-error" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="audit-results" class="results" aria-live="polite" aria-busy="false" hidden></section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="app.footer">Air data: Open-Meteo (CAMS forecast). Summaries: Groq AI, written only from the numbers shown. 1 cigarette ≈ breathing 22 µg/m³ of PM2.5 for a day (Berkeley Earth). Not medical advice.</p>
+  </footer>
+</body>
+</html>
